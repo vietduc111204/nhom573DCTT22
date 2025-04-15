@@ -1,0 +1,295 @@
+/* CSS Đặt chung */
+body {
+    margin: 0;
+    padding-top: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    color: #0693e3;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Tiêu đề */
+.ten {
+    font-size: 24px;
+    margin-left: 100px;
+}
+
+/* Đăng Nhập */
+.TK {
+    padding: 10px 14px;
+    font-weight: bold;
+    color: #0693e3;
+    border: solid 1px #0693e3;
+    border-radius: 20px;
+    margin-top: -50px;
+    margin-right: 50px;
+    float: right;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.TK:hover {
+    color: #ffffff;
+    background-color: #0693e3;
+}
+
+/* Menu */
+nav ul {
+    font-weight: bold;
+    list-style-type: none;
+    padding: 0;
+    background: white;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid #0693e3;
+}
+
+nav ul li {
+    display: inline;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    border-radius: 10px;
+    background-color: #16eed1;
+}
+
+/* Menu con */
+.menu1 {
+    font-weight: bold;
+    display: block;
+    position: absolute;
+    background-color: #0693e3;
+    top: 29px;
+    left: -100px;
+    padding: 10px 0;
+    border-radius: 15px;
+    z-index: 999;
+    width: 700px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    pointer-events: none; /* Ngăn chặn tương tác khi ẩn */
+}
+
+nav ul li:hover .menu1 {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Cho phép tương tác khi hiện */
+}
+
+.menu1 a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    margin: 5px;
+    width: calc(40% - 10px);
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+button {
+    background-color: #7d9a7e; /* Màu nền */
+    color: white; /* Màu chữ */
+    border: none; /* Không có viền */
+    padding: 10px 20px; /* Khoảng cách nội dung và biên */
+    text-align: center; /* Căn giữa nội dung */
+    text-decoration: none; /* Không gạch chân */
+    display: inline-block; /* Hiển thị là khối */
+    font-size: 16px; /* Cỡ chữ */
+    margin-left: 50px; /* Khoảng cách đệm */
+    cursor: pointer; /* Con trỏ chuột khi di chuột qua */
+    border-radius: 5px; /* Đường viền cong */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển đổi màu nền */
+}
+
+button:hover {
+    background-color: #33a92f; /* Màu nền khi hover */
+}
+section {
+    padding: 20px;
+}
+.DM{
+    text-align: center;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form select,
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button,
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    margin-left: 220px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: 120px;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #466dc6;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+/* CSS cho modal chính */
+.modal {
+    display: none; /* Mặc định là ẩn */
+    position: fixed; /* Cho modal xuất hiện trên mọi nội dung */
+    z-index: 1; /* Đảm bảo modal hiển thị trên tất cả các phần tử khác */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Màu nền mờ */
+    overflow: auto; /* Cho phép cuộn khi nội dung quá dài */
+}
+
+/* CSS cho nội dung bên trong modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Canh giữa modal theo chiều dọc */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Chiều rộng của nội dung modal */
+    max-width: 600px; /* Giới hạn chiều rộng tối đa */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Đổ bóng */
+}
+
+/* CSS cho nút đóng modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* CSS cho tiêu đề của modal */
+#modalTitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* CSS cho các label và input trong form */
+label, input[type=text] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type=text] {
+    width: calc(100% - 20px); /* Độ rộng của input */
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.no-data {
+    text-align: center;
+    font-weight: bold;
+    padding: 15px 0; /* Khoảng cách trên dưới để tạo không gian */
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+.success-message {
+    background-color: #4CAF50; /* Màu nền xanh lá cây */
+    color: white; /* Màu chữ trắng */
+    text-align: center; /* Căn giữa nội dung */
+    padding: 10px; /* Khoảng cách padding xung quanh nội dung */
+    margin-bottom: 10px; /* Khoảng cách phía dưới */
+}
