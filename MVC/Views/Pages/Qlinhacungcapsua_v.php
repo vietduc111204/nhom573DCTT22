@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chỉnh sửa nhà cung cấp</title>
+    <link rel="stylesheet" type="text/css" href="http://localhost/baitaplon/Public/CSS/khachhangsua.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div></div>
+        <div class="header-item">
+            <h2>Sửa thông tin nhà cung cấp</h2>
+        </div>
+        <div class="header-item">
+           <a href="http://localhost/baitaplon/Qlinhacungcap">
+                <button>
+                    <i class="fa-solid fa-rotate-left"></i> Quay lại
+                </button>
+           </a>
+        </div>
+    </div>
+
+    <div class="content">
+        <form method="post" action="http://localhost/baitaplon/Qlinhacungcap/suadl">
+            <table>
+                <?php 
+                    if(isset($data['dulieu']) && mysqli_num_rows($data['dulieu'])>0){
+                        while($row=mysqli_fetch_assoc($data['dulieu'])){
+                ?>
+                 <input type="hidden" name="txtManhacungcapbandau" placeholder="Mã nhà cung cấp" class="width" value="<?php echo $row['Mancc'];?>">
+                <tr>
+                    <td>Mã nhà cung cấp :</td>
+                    <td>
+                        <input type="text" name="txtMancc" placeholder="Mã nhà cung cấp" class="width" value="<?php echo $row['Mancc'];?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tên nhà cung cấp :</td>
+                    <td>
+                        <input type="text" name="txtTenncc" placeholder="Tên nhà cung cấp" class="width" value="<?php echo $row['Tenncc'];?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email :</td>
+                    <td>
+                        <input type="text" name="txtEmail" placeholder="Email" class="width" value="<?php echo $row['Email'];?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Số điện thoại :</td>
+                    <td>
+                        <input type="number" name="nbSdt" placeholder="Số điện thoại" class="width" value="<?php echo $row['Sdt'];?>">
+                    </td>
+                </tr>
+                <tr>
+                   <td>Địa chỉ :</td>
+                   <td>
+                        <input type="text" name="txtDiachi" placeholder="Địa chỉ" class="width" value="<?php echo $row['Diachi'];?>">
+                   </td>
+                </tr>
+                
+                <?php
+                        }
+                    }
+                ?>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button class="button" name="btnSua">
+                            <i class="fa-solid fa-pen"></i> Sửa
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+
